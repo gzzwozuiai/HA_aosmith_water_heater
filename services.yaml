@@ -1,0 +1,2 @@
+climate:
+  - platform: aosmith_water_heater
