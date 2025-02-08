@@ -1,10 +1,10 @@
 {
-  "domain": "aosmith_water_heater",
+  "domain": "ao_smith",
   "name": "AO Smith Water Heater",
   "version": "1.0.0",
-  "documentation": "https://github.com/yourusername/ha-aosmith-water-heater",
-  "requirements": ["aiohttp"],
-  "dependencies": [],
+  "documentation": "https://github.com/yourusername/ha-ao-smith",
+  "requirements": ["aiohttp>=3.7.4"],
   "codeowners": ["@yourusername"],
-  "iot_class": "cloud_push"
+  "config_flow": true,
+  "iot_class": "cloud_polling"
 }
