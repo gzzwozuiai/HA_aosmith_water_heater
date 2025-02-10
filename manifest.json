@@ -1,9 +1,10 @@
 {
-  "domain": "aosmith_water_heater",
-  "name": "AO Smith Water Heater",
+  "domain": "aosmith_waterheater",
+  "name": "Ao Smith Water Heater",
   "version": "1.0.0",
-  "documentation": "https://www.example.com",
+  "requirements": ["requests"],
+  "config_flow": true,
+  "codeowners": ["Your Name"],
   "dependencies": [],
-  "codeowners": ["@your_github_username"],
-  "requirements": ["requests>=2.25.1"]
+  "iot_class": "cloud_polling"
 }
