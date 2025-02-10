@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "requirements": ["requests"],
   "config_flow": true,
-  "codeowners": ["Your Name"],
+  "codeowners": "gzzwozuiai",
   "dependencies": [],
   "iot_class": "cloud_polling"
 }
