@@ -1,0 +1,7 @@
+# 自定义服务示例（可选）
+set_custom_temperature:
+  description: 设置自定义温度
+  fields:
+    temperature:
+      description: 目标温度
+      example: 45
