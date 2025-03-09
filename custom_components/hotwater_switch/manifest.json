@@ -1,0 +1,9 @@
+{
+  "name": "HotWater Switch",
+  "version": "1.0.0",
+  "requirements": ["aiohttp>=3.7.4"],
+  "dependencies": [],
+  "codeowners": ["gzzwozuiai"],
+  "iot_class": "cloud_push",
+  "config_flow": true
+}
