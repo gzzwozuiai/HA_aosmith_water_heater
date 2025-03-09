@@ -1,0 +1,18 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "设备已配置"
+    },
+    "step": {
+      "user": {
+        "title": "热水器配置",
+        "description": "请输入API凭证",
+        "data": {
+          "access_token": "访问令牌",
+          "user_id": "用户ID",
+          "family_id": "家庭ID"
+        }
+      }
+    }
+  }
+}
