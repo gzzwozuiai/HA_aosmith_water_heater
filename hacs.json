@@ -1,6 +1,5 @@
 {
   "name": "A.O.Smith Water Heater",
   "render_readme": true,
-  "homeassistant": "2024.1.0",
-  "filename": "hotwater_switch"
+  "homeassistant": "2024.1.0"
 }
