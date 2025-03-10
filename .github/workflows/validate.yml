@@ -15,6 +15,7 @@ jobs:
         uses: "hacs/action@main"
         with:
           directory: "custom_components/aosmith_water_heater"  # 指定集成目录
+          category: "integration"
 
       # 3. 检查关键文件是否存在
       - name: Check required files
