@@ -1,7 +1,6 @@
 {
-  "name": "热水器开关控制",
+  "name": "A.O.Smith Water Heater",
   "render_readme": true,
   "homeassistant": "2024.1.0",
-  "content_in_root": false,
   "filename": "hotwater_switch"
 }
