@@ -1,8 +1,8 @@
 {
-  "domain": "hotwater_switch",
-  "name": "HotWater Switch",
+  "domain": "aosmith_water_heater",
+  "name": "A.O.Smith Water Heater",
   "version": "1.0.0",
-  "requirements": ["aiohttp>=3.7.4"],
+  "requirements": ["aiohttp>=3.8.0"],
   "dependencies": [],
   "codeowners": ["@gzzwozuiai"],
   "iot_class": "cloud_push",
