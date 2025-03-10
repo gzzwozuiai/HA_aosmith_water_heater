@@ -1,8 +1,71 @@
 name: HACS Validation
-on: [push, pull_request]
+on: [push, pull_request]  # 触发条件：推送代码或创建 PR 时运行
+
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # 使用最新 Ubuntu 环境
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: hacs/action-validate@v1
+      # 1. 检出代码
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. 验证 HACS 仓库结构
+      - name: Validate HACS structure
+        uses: hacs/action-validate@v1
+        with:
+          directory: "custom_components/aosmith_water_heater"  # 指定集成目录
+
+      # 3. 检查关键文件是否存在
+      - name: Check required files
+        run: |
+          REQUIRED_FILES=(
+            "hacs.json"
+            "info.json"
+            "README.md"
+            "custom_components/aosmith_water_heater/__init__.py"
+            "custom_components/aosmith_water_heater/manifest.json"
+          )
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing required file: $file"
+              exit 1
+            fi
+          done
+          echo "✅ All required files are present."
+
+      # 4. 校验 JSON 文件语法
+      - name: Validate JSON syntax
+        run: |
+          JSON_FILES=(
+            "hacs.json"
+            "info.json"
+            "custom_components/aosmith_water_heater/manifest.json"
+          )
+          for file in "${JSON_FILES[@]}"; do
+            echo "Validating $file"
+            jq empty "$file" || exit 1
+          done
+          echo "✅ All JSON files are valid."
+
+      # 5. 检查目录命名（必须全小写）
+      - name: Check directory naming
+        run: |
+          if ls custom_components/ | grep -E '[A-Z]'; then
+            echo "❌ Directory names must be lowercase."
+            exit 1
+          fi
+          echo "✅ Directory names are valid."
+
+      # 6. 检查 Python 文件编码
+      - name: Check Python file encoding
+        run: |
+          PYTHON_FILES=$(find custom_components/aosmith_water_heater -name "*.py")
+          for file in $PYTHON_FILES; do
+            encoding=$(file --mime-encoding "$file" | awk '{print $2}')
+            if [ "$encoding" != "utf-8" ]; then
+              echo "❌ Invalid encoding in $file: $encoding"
+              exit 1
+            fi
+          done
+          echo "✅ All Python files are UTF-8 encoded."
