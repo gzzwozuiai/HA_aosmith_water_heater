@@ -12,7 +12,7 @@ jobs:
 
       # 2. 验证 HACS 仓库结构
       - name: Validate HACS structure
-        uses: hacs/action@v1
+        uses: hacs/action
         with:
           directory: "custom_components/aosmith_water_heater"  # 指定集成目录
 
