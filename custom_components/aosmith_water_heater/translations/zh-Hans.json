@@ -1,0 +1,78 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "该设备已配置。",
+      "reauth_successful": "重新认证成功。"
+    },
+    "error": {
+      "cannot_connect": "无法连接到 A.O.史密斯云服务。",
+      "invalid_auth": "访问令牌被拒绝或已过期。",
+      "no_devices": "该家庭下没有找到任何设备。"
+    },
+    "step": {
+      "user": {
+        "title": "A.O.史密斯净水加热一体机",
+        "description": "填写从 A.O.史密斯 App 抓包得到的凭证。访问令牌取自 Authorization 请求头，用户 ID 和家庭 ID 取自请求体。",
+        "data": {
+          "access_token": "访问令牌",
+          "user_id": "用户 ID",
+          "family_id": "家庭 ID"
+        }
+      },
+      "device": {
+        "title": "选择设备",
+        "description": "选择要接入的设备。",
+        "data": {
+          "device_id": "设备"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新认证",
+        "description": "访问令牌已过期，请从 App 重新抓取一个。",
+        "data": {
+          "access_token": "访问令牌"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "加热状态字段",
+        "description": "设备上报的属性里没有标明哪一个对应加热开关。请手动开关一次，对比开关实体的属性，选出发生变化的那个字段。",
+        "data": {
+          "heater_state_key": "状态字段"
+        }
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "heater": {
+        "name": "加热"
+      }
+    },
+    "sensor": {
+      "hot_water_temperature": {
+        "name": "热水温度"
+      },
+      "water_used_today": {
+        "name": "今日用水量"
+      },
+      "tds": {
+        "name": "TDS"
+      },
+      "filter_life": {
+        "name": "{index} 号滤芯寿命"
+      }
+    },
+    "binary_sensor": {
+      "heating": {
+        "name": "加热中"
+      },
+      "child_lock": {
+        "name": "童锁"
+      }
+    }
+  }
+}

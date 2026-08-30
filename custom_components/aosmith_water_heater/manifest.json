@@ -1,18 +1,12 @@
 {
   "domain": "aosmith_water_heater",
-  "name": "A.O.Smith Water Heater",
-  "version": "1.0.0",
-  "requirements": ["aiohttp>=3.8.0"],
-  "dependencies": [],
+  "name": "A.O. Smith Water Heater",
   "codeowners": ["@gzzwozuiai"],
   "config_flow": true,
-  "iot_class": "cloud_push",
-  "documentation": "https://github.com/gzzwozuiai/ha_aosmith_water_heater/blob/main/README.md",
+  "documentation": "https://github.com/gzzwozuiai/ha_aosmith_water_heater",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/gzzwozuiai/ha_aosmith_water_heater/issues",
-  "brands": {
-    "aosmith_water_heater": {
-      "name": "A.O.Smith",
-      "render_readme": true
-    }
-  }
+  "requirements": [],
+  "version": "2.0.0"
 }

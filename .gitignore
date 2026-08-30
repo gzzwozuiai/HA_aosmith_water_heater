@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Packet captures contain live bearer tokens, user/family IDs and device MACs.
+# This repository is public — keep them out of it.
+Request and Response/
+*.har
